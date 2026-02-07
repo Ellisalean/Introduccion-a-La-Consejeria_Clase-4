@@ -351,42 +351,42 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
   // --- Final Completion Slide Rendering Logic ---
   if (slide.type === 'completion') {
     return (
-      <div className="h-full w-full relative flex items-center justify-center overflow-hidden bg-[#111111] p-12 lg:p-24">
+      <div className="h-full w-full relative flex items-center justify-center overflow-hidden bg-[#111111] p-12 lg:p-16">
          <div className="absolute inset-0 z-0">
            <img src={slide.visual.source} className="w-full h-full object-cover opacity-30" alt="" />
            <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-[#111111]" />
          </div>
-         <div className="relative z-10 text-center space-y-12 animate-in zoom-in-95 duration-1000 max-w-4xl w-full">
-            <div className="inline-block p-6 bg-red-600 rounded-[2.5rem] shadow-[0_0_50px_rgba(239,68,68,0.5)] animate-bounce mb-8">
-               {renderIcon('Trophy', 64)}
+         <div className="relative z-10 text-center space-y-6 lg:space-y-10 animate-in zoom-in-95 duration-1000 max-w-4xl w-full">
+            <div className="inline-block p-5 bg-red-600 rounded-[2.5rem] shadow-[0_0_50px_rgba(239,68,68,0.5)] animate-bounce mb-2">
+               {renderIcon('Trophy', 60)}
             </div>
-            <div className="space-y-4">
-              <h2 className="text-6xl lg:text-8xl font-black uppercase tracking-tighter text-white leading-none">{slide.title}</h2>
-              <p className="text-xl lg:text-3xl font-bold text-red-500 uppercase tracking-[0.4em]">{slide.subtitle}</p>
+            <div className="space-y-2">
+              <h2 className="text-5xl lg:text-7xl font-black uppercase tracking-tighter text-white leading-none">{slide.title}</h2>
+              <p className="text-lg lg:text-2xl font-bold text-red-500 uppercase tracking-[0.4em]">{slide.subtitle}</p>
             </div>
             
             {/* Cita de Cierre - Barra a la IZQUIERDA */}
-            <div className="relative p-12 lg:p-16 max-w-3xl mx-auto">
+            <div className="relative p-8 lg:p-10 max-w-3xl mx-auto">
                <div className="absolute left-0 top-0 bottom-0 w-2 bg-red-600 rounded-full shadow-[0_0_20px_rgba(239,68,68,0.5)]" />
-               <p className="text-2xl lg:text-4xl font-light text-slate-200 leading-relaxed text-left italic pl-10">
+               <p className="text-xl lg:text-3xl font-light text-slate-200 leading-relaxed text-left italic pl-10">
                   {slide.content}
                </p>
-               <div className="flex justify-start pl-10 mt-4">
+               <div className="flex justify-start pl-10 mt-2">
                   <span className="text-xs font-black uppercase tracking-[0.5em] text-red-500">Frase de Cierre</span>
                </div>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-6 pt-6">
-               <button onClick={() => goToSlide(7)} className="px-10 py-5 bg-white/5 border border-white/10 rounded-full font-black uppercase text-[10px] tracking-[0.3em] hover:bg-white/10 transition-all flex items-center gap-3">
+            <div className="flex flex-wrap justify-center gap-4 lg:gap-6 pt-4">
+               <button onClick={() => goToSlide(7)} className="px-8 py-4 lg:px-10 lg:py-5 bg-white/5 border border-white/10 rounded-full font-black uppercase text-[10px] tracking-[0.3em] hover:bg-white/10 transition-all flex items-center gap-3">
                  {renderIcon('LayoutList', 18)} Repetir Casos
                </button>
-               <button onClick={() => goToSlide(11)} className="px-10 py-5 bg-white/5 border border-white/10 rounded-full font-black uppercase text-[10px] tracking-[0.3em] hover:bg-white/10 transition-all flex items-center gap-3">
+               <button onClick={() => goToSlide(11)} className="px-8 py-4 lg:px-10 lg:py-5 bg-white/5 border border-white/10 rounded-full font-black uppercase text-[10px] tracking-[0.3em] hover:bg-white/10 transition-all flex items-center gap-3">
                  {renderIcon('Zap', 18)} Repetir Interruptor
                </button>
-               <button onClick={resetLesson} className="px-10 py-5 bg-white/5 border border-white/10 rounded-full font-black uppercase text-[10px] tracking-[0.3em] hover:bg-red-600 transition-all flex items-center gap-3">
+               <button onClick={resetLesson} className="px-8 py-4 lg:px-10 lg:py-5 bg-white/5 border border-white/10 rounded-full font-black uppercase text-[10px] tracking-[0.3em] hover:bg-red-600 transition-all flex items-center gap-3">
                  {renderIcon('RotateCcw', 18)} Reiniciar Curso
                </button>
-               <button onClick={handleAbandon} className="px-12 py-6 bg-red-600 rounded-full font-black uppercase text-xs tracking-[0.4em] shadow-xl hover:scale-105 transition-all">
+               <button onClick={handleAbandon} className="px-10 py-5 lg:px-12 lg:py-6 bg-red-600 rounded-full font-black uppercase text-xs tracking-[0.4em] shadow-xl hover:scale-105 transition-all">
                  Finalizar Sesión
                </button>
             </div>
